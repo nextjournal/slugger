@@ -1,12 +1,12 @@
 (ns slugger.conversions
   (:refer-clojure :exclude [replace])
   (:use [clojure.string :only [replace lower-case trim]])
-  (:import [net.sf.junidecode Junidecode]))
-  
+  (:import [net.gcardone.junidecode Junidecode]))
+
 (defn unidecode
   "Create 7-bit ascii version of unicode string."
   [text]
-  (net.sf.junidecode.Junidecode/unidecode text))
+  (net.gcardone.junidecode.Junidecode/unidecode text))
 
 (defn convert-accented-entities
   "Convert html accent entities to correct 7bit ascii version"
